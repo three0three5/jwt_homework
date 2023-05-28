@@ -11,7 +11,7 @@ spring:
     password: ${POSTGRES_PASSWORD}
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
@@ -29,5 +29,3 @@ spring:
     deserialization:
       fail-on-unknown-properties: true
 
-secret:
-  key: gKYKxIeRfM8DUKpO2B4KbqLaflzGAhbfG/pK/ThoDbXi9BHrQpRTrUue2VaTS2OLVJQBhwIw30vMviloAh4Ebw==

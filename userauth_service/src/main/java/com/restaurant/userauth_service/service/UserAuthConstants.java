@@ -1,10 +1,8 @@
 package com.restaurant.userauth_service.service;
 
-import org.springframework.beans.factory.annotation.Value;
-
 public final class UserAuthConstants {
-    @Value("${secret.key}")
-    public static String SECRET;
+    public static final String SECRET = "gKYKxIeRfM8DUKpO2B4KbqLaflzGAhbfG/pK/ThoDbXi9BHrQpRTrUue2VaTS2OLVJQBhwIw30vMviloAh4Ebw==";
+
     public static final String USERNAME_IS_INVALID =
             "The username can only contain english letters, " +
                     "numbers, underscores, spaces, and must be no longer than 10 characters";
@@ -32,4 +30,6 @@ public final class UserAuthConstants {
             You are allowed to see menu,
             make orders,
             and get order info by id.""";
+
+    private UserAuthConstants() {}
 }

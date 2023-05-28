@@ -19,22 +19,22 @@ public class OrderService {
     private final OrderRepository orderRepository;
 
     public Object makeOrder(String token, OrderRequestDto orderRequestDto) throws InvalidOperationException {
-
+        return null;
     }
 
 
     public List<OrderResponseDto> getOrderList(String token) throws InvalidOperationException {
-
+        return null;
     }
 
 
     public String changeOrderStatus(String token,
                                     OrderInfoRequestDto requestDto) throws InvalidOperationException {
-
+        return null;
     }
 
     public OrderInfoResponseDto getOrderInfo(String token,
                                              OrderInfoRequestDto requestDto) throws InvalidOperationException {
-
+        return null;
     }
 }

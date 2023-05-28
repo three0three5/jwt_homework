@@ -56,6 +56,7 @@ public class AuthService {
     public String register(RegistrationRequestDto registrationRequestDto) throws InvalidAuthOperationException {
         // По умолчанию, после регистрации все пользователи имеют роль CUSTOMER
         // но пользователи с ролью MANAGER могут менять всем роли
+        // Первый зарегистрировавшийся станет менеджером
         String userName = registrationRequestDto.getUserName();
         String email = registrationRequestDto.getEmail();
         checkUsernameAndEmail(userName, email);
@@ -63,8 +64,12 @@ public class AuthService {
                 registrationRequestDto.getPassword(),
                 BCrypt.gensalt()
         );
+        Role role = Role.CUSTOMER;
+        if (userRepository.findAll().isEmpty()) {
+            role = Role.MANAGER;
+        }
         userRepository.save(new User()
-                .setRole(Role.CUSTOMER)
+                .setRole(role)
                 .setEmail(email)
                 .setUsername(userName)
                 .setPasswordHash(passwordHash)

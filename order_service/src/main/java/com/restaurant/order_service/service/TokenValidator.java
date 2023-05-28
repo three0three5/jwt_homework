@@ -4,24 +4,36 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.restaurant.order_service.dto.jwt.JwtHeaderDto;
 import com.restaurant.order_service.dto.jwt.JwtPayloadDto;
-import lombok.Setter;
+import com.restaurant.order_service.service.exception.InvalidOperationException;
 import org.apache.tomcat.util.codec.binary.Base64;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpStatus;
 
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 
-@Setter
 public class TokenValidator {
-    @Value("${secret.key}")
-    private static String KEY;
+    private static final String KEY = "gKYKxIeRfM8DUKpO2B4KbqLaflzGAhbfG/pK/ThoDbXi9BHrQpRTrUue2VaTS2OLVJQBhwIw30vMviloAh4Ebw==";
+
 
     private static final String ALGORITHM = "HmacSHA512";
 
+    public static JwtPayloadDto getPayloadFromToken(String accessToken) throws InvalidOperationException {
+        if (!TokenValidator.tokenIsValid(accessToken)) {
+            throw new InvalidOperationException(HttpStatus.UNAUTHORIZED, "Unauthorized");
+        }
+        JwtPayloadDto payloadDto = TokenValidator.getPayload(accessToken);
+        assert payloadDto != null;
+        String payloadCheck = TokenValidator.checkPayload(payloadDto);
+        if (!"ok".equals(payloadCheck)) {
+            throw new InvalidOperationException(HttpStatus.UNAUTHORIZED, payloadCheck);
+        }
+        return payloadDto;
+    }
 
-    public static boolean tokenIsValid(String accessToken) {
+
+    private static boolean tokenIsValid(String accessToken) {
         String[] parts = accessToken.split("\\.");
         if (parts.length != 3) {
             return false;
@@ -32,7 +44,7 @@ public class TokenValidator {
         try {
             header = new String(Base64.decodeBase64(parts[0]));
             payload = new String(Base64.decodeBase64(parts[1]));
-            hashed = getSignature(parts[0] + "." + parts[1], KEY);
+            hashed = getSignature(parts[0] + "." + parts[1]);
         } catch (Exception e) {
             e.printStackTrace();
             return false;
@@ -51,7 +63,7 @@ public class TokenValidator {
         return true;
     }
 
-    public static JwtPayloadDto getPayload(String accessToken) {
+    private static JwtPayloadDto getPayload(String accessToken) {
         String[] parts = accessToken.split("\\.");
         String payload = new String(Base64.decodeBase64(parts[1]));
         ObjectMapper objectMapper = new ObjectMapper();
@@ -63,7 +75,7 @@ public class TokenValidator {
         return null;
     }
 
-    public static String checkPayload(JwtPayloadDto payloadDto) {
+    private static String checkPayload(JwtPayloadDto payloadDto) {
         Long notBefore = payloadDto.getNbf();
         Long expiredIn = payloadDto.getExp();
         Long current = System.currentTimeMillis();
@@ -74,8 +86,8 @@ public class TokenValidator {
         }
         return "ok";
     }
-    private static String getSignature(String data, String key) {
-        SecretKeySpec secretKeySpec = new SecretKeySpec(key.getBytes(), ALGORITHM);
+    private static String getSignature(String data) {
+        SecretKeySpec secretKeySpec = new SecretKeySpec(TokenValidator.KEY.getBytes(), ALGORITHM);
         Mac mac;
         try {
             mac = Mac.getInstance(ALGORITHM);

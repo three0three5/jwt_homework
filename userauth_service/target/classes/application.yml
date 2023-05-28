@@ -8,10 +8,10 @@ spring:
     url: ${POSTGRES_URL:jdbc:postgresql://localhost:5432/userauth-service}
     driverClassName: org.postgresql.Driver
     username: ${POSTGRES_USER:postgres}
-    password: ${POSTGRES_PASSWORD:0408}
+    password: ${POSTGRES_PASSWORD}
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
