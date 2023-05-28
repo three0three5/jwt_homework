@@ -4,6 +4,7 @@ import com.restaurant.order_service.api.OrderApi;
 import com.restaurant.order_service.dto.request.OrderInfoRequestDto;
 import com.restaurant.order_service.dto.request.OrderRequestDto;
 import com.restaurant.order_service.service.OrderService;
+import com.restaurant.order_service.service.exception.InvalidOperationException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -15,21 +16,37 @@ public class OrderController implements OrderApi {
 
     @Override
     public ResponseEntity<?> makeOrder(String token, OrderRequestDto orderRequestDto) {
-        return null;
+        try {
+            return ResponseEntity.ok(orderService.makeOrder(token, orderRequestDto));
+        } catch (InvalidOperationException e) {
+            return ResponseEntity.status(e.getHttpStatus()).body(e.getMessage());
+        }
     }
 
     @Override
     public ResponseEntity<?> getOrderList(String token) {
-        return null;
+        try {
+            return ResponseEntity.ok(orderService.getOrderList(token));
+        } catch (InvalidOperationException e) {
+            return ResponseEntity.status(e.getHttpStatus()).body(e.getMessage());
+        }
     }
 
     @Override
     public ResponseEntity<?> changeStatusById(String token, OrderInfoRequestDto requestDto) {
-        return null;
+        try {
+            return ResponseEntity.ok(orderService.changeOrderStatus(token, requestDto));
+        } catch (InvalidOperationException e) {
+            return ResponseEntity.status(e.getHttpStatus()).body(e.getMessage());
+        }
     }
 
     @Override
     public ResponseEntity<?> getOrderInfo(String token, OrderInfoRequestDto requestDto) {
-        return null;
+        try {
+            return ResponseEntity.ok(orderService.getOrderInfo(token, requestDto));
+        } catch (InvalidOperationException e) {
+            return ResponseEntity.status(e.getHttpStatus()).body(e.getMessage());
+        }
     }
 }

@@ -18,14 +18,14 @@ public class DishService {
     private final OrderRepository orderRepository;
 
     public List<? extends DishResponseDto> getMenu(String token) throws InvalidOperationException {
-        return null;
+
     }
 
     public String addDish(String token, DishCreateRequestDto dishRequestDto) throws InvalidOperationException {
-        return null;
+
     }
 
     public String deleteDish(String token, DishDeleteRequestDto requestDto) throws InvalidOperationException {
-        return null;
+
     }
 }
