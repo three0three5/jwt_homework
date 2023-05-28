@@ -11,6 +11,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -65,7 +67,8 @@ public class UserService {
             throw new UserServiceException(HttpStatus.NOT_FOUND, "User not found");
         }
         User user = optionalUser.get();
-        user.setRole(role);
+        user.setRole(role)
+                .setUpdatedAt(Timestamp.valueOf(LocalDateTime.now()));
         userRepository.save(user);
         return "Changed successfully";
     }
