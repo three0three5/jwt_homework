@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
 @EnableJpaRepositories(basePackages = "com.restaurant.order_service.domain.repository")
-@EntityScan("com.restaurant.userauth_service.*")
+@EntityScan("com.restaurant.order_service.*")
 @ComponentScan(basePackages = "com.restaurant.order_service.*")
 public class OrderServiceApplication {
 

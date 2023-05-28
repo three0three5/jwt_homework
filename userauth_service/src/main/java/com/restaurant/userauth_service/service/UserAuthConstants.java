@@ -1,7 +1,10 @@
 package com.restaurant.userauth_service.service;
 
+import org.springframework.beans.factory.annotation.Value;
+
 public final class UserAuthConstants {
-    public static final String SECRET = "gKYKxIeRfM8DUKpO2B4KbqLaflzGAhbfG/pK/ThoDbXi9BHrQpRTrUue2VaTS2OLVJQBhwIw30vMviloAh4Ebw==";
+    @Value("${secret.key}")
+    public static String SECRET;
     public static final String USERNAME_IS_INVALID =
             "The username can only contain english letters, " +
                     "numbers, underscores, spaces, and must be no longer than 10 characters";
@@ -20,7 +23,7 @@ public final class UserAuthConstants {
             see the list of users,
             see the list of dishes,
             add dishes to dish table,
-            change dishes price""";
+            change and delete dishes by their name""";
     public static final String CHEF_MESSAGE = """
             You are allowed to see order list,
             change order status,

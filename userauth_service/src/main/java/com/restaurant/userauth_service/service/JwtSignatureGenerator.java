@@ -6,6 +6,7 @@ import com.restaurant.userauth_service.domain.entity.User;
 import com.restaurant.userauth_service.dto.jwt.JwtHeaderDto;
 import com.restaurant.userauth_service.dto.jwt.JwtPayloadDto;
 import io.jsonwebtoken.io.Encoders;
+import org.springframework.beans.factory.annotation.Value;
 
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;

@@ -1,7 +1,7 @@
 package com.restaurant.userauth_service.service;
 
 import com.restaurant.userauth_service.controller.exceptions.UserServiceException;
-import com.restaurant.userauth_service.domain.entity.Role;
+import com.restaurant.userauth_service.domain.Role;
 import com.restaurant.userauth_service.domain.entity.User;
 import com.restaurant.userauth_service.domain.repository.UserRepository;
 import com.restaurant.userauth_service.dto.jwt.JwtPayloadDto;

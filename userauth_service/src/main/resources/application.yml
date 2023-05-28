@@ -8,7 +8,7 @@ spring:
     url: ${POSTGRES_URL:jdbc:postgresql://localhost:5432/userauth-service}
     driverClassName: org.postgresql.Driver
     username: ${POSTGRES_USER:postgres}
-    password: ${POSTGRES_PASSWORD:0408}
+    password: ${POSTGRES_PASSWORD}
   jpa:
     hibernate:
       ddl-auto: update
@@ -28,3 +28,6 @@ spring:
     default-property-inclusion: non_null
     deserialization:
       fail-on-unknown-properties: true
+
+secret:
+  key: gKYKxIeRfM8DUKpO2B4KbqLaflzGAhbfG/pK/ThoDbXi9BHrQpRTrUue2VaTS2OLVJQBhwIw30vMviloAh4Ebw==

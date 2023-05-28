@@ -1,5 +1,6 @@
 package com.restaurant.userauth_service.domain.entity;
 
+import com.restaurant.userauth_service.domain.Role;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.experimental.Accessors;

@@ -1,7 +1,7 @@
 package com.restaurant.userauth_service.service;
 
 import com.restaurant.userauth_service.controller.exceptions.InvalidAuthOperationException;
-import com.restaurant.userauth_service.domain.entity.Role;
+import com.restaurant.userauth_service.domain.Role;
 import com.restaurant.userauth_service.domain.entity.Session;
 import com.restaurant.userauth_service.domain.entity.User;
 import com.restaurant.userauth_service.domain.repository.SessionRepository;

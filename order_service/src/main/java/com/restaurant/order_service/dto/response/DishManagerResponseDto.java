@@ -1,6 +1,5 @@
-package com.restaurant.userauth_service.dto.response;
+package com.restaurant.order_service.dto.response;
 
-import com.restaurant.userauth_service.domain.Role;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
@@ -10,8 +9,7 @@ import lombok.experimental.Accessors;
 @Setter
 @Accessors(chain = true)
 @RequiredArgsConstructor
-public class UserResponseDto {
+public class DishManagerResponseDto extends DishResponseDto {
     private Integer id;
-    private String username;
-    private Role role;
+    private Integer quantity;
 }

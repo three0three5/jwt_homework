@@ -1,4 +1,4 @@
-package com.restaurant.userauth_service.domain.entity;
+package com.restaurant.userauth_service.domain;
 
 public enum Role {
     CUSTOMER,
