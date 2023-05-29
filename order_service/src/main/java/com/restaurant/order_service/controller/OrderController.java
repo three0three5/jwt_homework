@@ -3,6 +3,7 @@ package com.restaurant.order_service.controller;
 import com.restaurant.order_service.api.OrderApi;
 import com.restaurant.order_service.dto.request.OrderInfoRequestDto;
 import com.restaurant.order_service.dto.request.OrderRequestDto;
+import com.restaurant.order_service.dto.request.OrderStatusRequestDto;
 import com.restaurant.order_service.service.OrderService;
 import com.restaurant.order_service.service.exception.InvalidOperationException;
 import lombok.RequiredArgsConstructor;
@@ -33,7 +34,7 @@ public class OrderController implements OrderApi {
     }
 
     @Override
-    public ResponseEntity<?> changeStatusById(String token, OrderInfoRequestDto requestDto) {
+    public ResponseEntity<?> changeStatusById(String token, OrderStatusRequestDto requestDto) {
         try {
             return ResponseEntity.ok(orderService.changeOrderStatus(token, requestDto));
         } catch (InvalidOperationException e) {

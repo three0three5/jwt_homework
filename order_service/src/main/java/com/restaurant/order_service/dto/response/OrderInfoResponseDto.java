@@ -14,7 +14,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class OrderInfoResponseDto {
     private Integer orderId;
-    List<DishManagerResponseDto> dishList;
+    List<DishIdDto> dishList;
     private String username;
     private String specialRequests;
     private OrderStatus status;
