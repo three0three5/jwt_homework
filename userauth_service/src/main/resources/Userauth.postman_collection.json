@@ -1,0 +1,478 @@
+{
+	"info": {
+		"_postman_id": "35464e76-4b09-4516-9a2a-13613f422be4",
+		"name": "Userauth",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "registration and log in",
+			"item": [
+				{
+					"name": "user register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\": \"NickName_SuperUser\",\r\n    \"email\": \"pochta@lol.ru\",\r\n    \"password\": \"12345eqw\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/auth-server/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth-server",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user register Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\": \"NickName_SuperUser2\",\r\n    \"email\": \"pochta2@lol.ru\",\r\n    \"password\": \"12345eqw\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/auth-server/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth-server",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user register Copy 2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\": \"NickName_SuperUser3\",\r\n    \"email\": \"pochta3@lol.ru\",\r\n    \"password\": \"12345eqw12\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/auth-server/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth-server",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "not unique email",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\": \"vavavav\",\r\n    \"email\": \"pochta@lol.ru\",\r\n    \"password\": \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/auth-server/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth-server",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "not unique name",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\": \"NickName_SuperUser\",\r\n    \"email\": \"pochta123@lol.ru\",\r\n    \"password\": \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/auth-server/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth-server",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "log in wrong password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"pochta@lol.ru\",\r\n    \"password\": \"12345eqwAAA\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/auth-server/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth-server",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "log in wrong email",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"pochta@lol.de\",\r\n    \"password\": \"12345eqw\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/auth-server/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth-server",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "log in",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"pochta2@lol.ru\",\r\n    \"password\": \"12345eqw\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/auth-server/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth-server",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "wrong refresh",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refreshToken\": \"this refresh is wroooong\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/auth-server/auth/token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth-server",
+								"auth",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "correct refresh",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refreshToken\": \"fJcyUDloLSzzAJrIJtCofE9pPZUvpNTy4CSYWorZN7dnDBMusEv7osbu7PKZZ3+PYr7nNo0Xsx/Sca5A3fCTgw==\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/auth-server/auth/token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth-server",
+								"auth",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "authentication, roles",
+			"item": [
+				{
+					"name": "check access",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJBdXRoIFNlcnZlciIsImV4cCI6MTY4NTMyMjI3NjU2MywibmJmIjoxNjg1MzIyMTU2NTYzLCJyb2xlIjoiQ1VTVE9NRVIiLCJ1c2VybmFtZSI6Ik5pY2tOYW1lX1N1cGVyVXNlcjIifQ==.d30e0s06klUWjESAw4MvYT3UHUWkTZyiXGujDN71jab6WsdYzE1RoIQ5zHD5YTlQ59SydGK2iQpa+loHwxa0XA==",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/auth-server/user/get_info",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth-server",
+								"user",
+								"get_info"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user list unauthorized",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eeeeeeeeeee",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/auth-server/user/get_user_list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth-server",
+								"user",
+								"get_user_list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user list not allowed",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJBdXRoIFNlcnZlciIsImV4cCI6MTY4NTMxNDMxNDU3OSwibmJmIjoxNjg1MzE0MTk0NTc5LCJyb2xlIjoiQ1VTVE9NRVIiLCJ1c2VybmFtZSI6Ik5pY2tOYW1lX1N1cGVyVXNlcjIifQ==.hzhElbP9Iba78AETMclNT+uTdfDhEkjzGew34JZWDxUH45ajliCgKcDQ49suxjb9zK40/4Ewp6fCwoBopYiJKA==",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/auth-server/user/get_user_list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth-server",
+								"user",
+								"get_user_list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user list",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJBdXRoIFNlcnZlciIsImV4cCI6MTY4NTMyMjI5MzE0NiwibmJmIjoxNjg1MzIyMTczMTQ2LCJyb2xlIjoiTUFOQUdFUiIsInVzZXJuYW1lIjoiTmlja05hbWVfU3VwZXJVc2VyIn0=.EvKnld9gX7u5YY02F9fieDxBdSQeVXRZ51FliQMz0yPiq2A5wqnTYfJV243YqNrhfN4fxmbpFDg4qQQyqS9P8w==",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/auth-server/user/get_user_list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth-server",
+								"user",
+								"get_user_list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change role",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJBdXRoIFNlcnZlciIsImV4cCI6MTY4NTMyMjI5MzE0NiwibmJmIjoxNjg1MzIyMTczMTQ2LCJyb2xlIjoiTUFOQUdFUiIsInVzZXJuYW1lIjoiTmlja05hbWVfU3VwZXJVc2VyIn0=.EvKnld9gX7u5YY02F9fieDxBdSQeVXRZ51FliQMz0yPiq2A5wqnTYfJV243YqNrhfN4fxmbpFDg4qQQyqS9P8w==",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": 2,\r\n    \"role\": \"CHEF\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/auth-server/user/change_role",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth-server",
+								"user",
+								"change_role"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

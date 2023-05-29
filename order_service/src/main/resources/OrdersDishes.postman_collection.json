@@ -1,0 +1,362 @@
+{
+	"info": {
+		"_postman_id": "a344da4d-eccc-4e2e-96e0-5551dd8cb197",
+		"name": "OrdersDishes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Dishes",
+			"item": [
+				{
+					"name": "menu for manager",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJBdXRoIFNlcnZlciIsImV4cCI6MTY4NTMyMDAzMDg0OSwibmJmIjoxNjg1MzE5OTEwODQ5LCJyb2xlIjoiTUFOQUdFUiIsInVzZXJuYW1lIjoiTmlja05hbWVfU3VwZXJVc2VyIn0=.KOMMGgzbGHg/pLXrksCcQiabRBjg+PmtTC9HsiWVHm8TxB2JEgKbiiDGda5HuOCVQMKRkpvqYBbeYd/yEt2zGw==",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/api/order-server/dish/menu",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"order-server",
+								"dish",
+								"menu"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "menu for customer",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJBdXRoIFNlcnZlciIsImV4cCI6MTY4NTMyMDI2OTYxNCwibmJmIjoxNjg1MzIwMTQ5NjE0LCJyb2xlIjoiQ1VTVE9NRVIiLCJ1c2VybmFtZSI6Ik5pY2tOYW1lX1N1cGVyVXNlcjIifQ==.fEI27NszhhgGWg/AJ3/TcjQPhTEJeyElI+m7cVelOs7l0VMkBD7ANowyFy1QLHRon+NJZAwz9JkcYjsfPb6SKg==",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/api/order-server/dish/menu",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"order-server",
+								"dish",
+								"menu"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add dish",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJBdXRoIFNlcnZlciIsImV4cCI6MTY4NTMyMDAzMDg0OSwibmJmIjoxNjg1MzE5OTEwODQ5LCJyb2xlIjoiTUFOQUdFUiIsInVzZXJuYW1lIjoiTmlja05hbWVfU3VwZXJVc2VyIn0=.KOMMGgzbGHg/pLXrksCcQiabRBjg+PmtTC9HsiWVHm8TxB2JEgKbiiDGda5HuOCVQMKRkpvqYBbeYd/yEt2zGw==",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"nuggets\",\r\n    \"description\": \"yummy\",\r\n    \"price\": 3.14,\r\n    \"quantity\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/order-server/dish/addOrChangeDish",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"order-server",
+								"dish",
+								"addOrChangeDish"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add dish Copy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJBdXRoIFNlcnZlciIsImV4cCI6MTY4NTMyMDAzMDg0OSwibmJmIjoxNjg1MzE5OTEwODQ5LCJyb2xlIjoiTUFOQUdFUiIsInVzZXJuYW1lIjoiTmlja05hbWVfU3VwZXJVc2VyIn0=.KOMMGgzbGHg/pLXrksCcQiabRBjg+PmtTC9HsiWVHm8TxB2JEgKbiiDGda5HuOCVQMKRkpvqYBbeYd/yEt2zGw==",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"sushi\",\r\n    \"description\": \"yummy\",\r\n    \"price\": 3.14,\r\n    \"quantity\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/order-server/dish/addOrChangeDish",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"order-server",
+								"dish",
+								"addOrChangeDish"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add dish Copy 2",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJBdXRoIFNlcnZlciIsImV4cCI6MTY4NTMyMDAzMDg0OSwibmJmIjoxNjg1MzE5OTEwODQ5LCJyb2xlIjoiTUFOQUdFUiIsInVzZXJuYW1lIjoiTmlja05hbWVfU3VwZXJVc2VyIn0=.KOMMGgzbGHg/pLXrksCcQiabRBjg+PmtTC9HsiWVHm8TxB2JEgKbiiDGda5HuOCVQMKRkpvqYBbeYd/yEt2zGw==",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"xleb\",\r\n    \"description\": \"wow\",\r\n    \"price\": 3.14,\r\n    \"quantity\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/order-server/dish/addOrChangeDish",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"order-server",
+								"dish",
+								"addOrChangeDish"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete dish",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJBdXRoIFNlcnZlciIsImV4cCI6MTY4NTMyMDAzMDg0OSwibmJmIjoxNjg1MzE5OTEwODQ5LCJyb2xlIjoiTUFOQUdFUiIsInVzZXJuYW1lIjoiTmlja05hbWVfU3VwZXJVc2VyIn0=.KOMMGgzbGHg/pLXrksCcQiabRBjg+PmtTC9HsiWVHm8TxB2JEgKbiiDGda5HuOCVQMKRkpvqYBbeYd/yEt2zGw==",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dishName\": \"xleb\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/order-server/dish/deleteDish",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"order-server",
+								"dish",
+								"deleteDish"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "make order",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJBdXRoIFNlcnZlciIsImV4cCI6MTY4NTMyMDI2OTYxNCwibmJmIjoxNjg1MzIwMTQ5NjE0LCJyb2xlIjoiQ1VTVE9NRVIiLCJ1c2VybmFtZSI6Ik5pY2tOYW1lX1N1cGVyVXNlcjIifQ==.fEI27NszhhgGWg/AJ3/TcjQPhTEJeyElI+m7cVelOs7l0VMkBD7ANowyFy1QLHRon+NJZAwz9JkcYjsfPb6SKg==",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dishRequestDtoList\": [\r\n        {\r\n            \"name\": \"sushi\",\r\n            \"quantity\": 1\r\n        },\r\n        {\r\n            \"name\": \"nuggets\",\r\n            \"quantity\": 1\r\n        }\r\n    ],\r\n    \"specialRequests\": \"wow\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/order-server/order/makeOrder",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"order-server",
+								"order",
+								"makeOrder"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list of dishes",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJBdXRoIFNlcnZlciIsImV4cCI6MTY4NTMyMjUwNzU4NCwibmJmIjoxNjg1MzIyMzg3NTg0LCJyb2xlIjoiQ0hFRiIsInVzZXJuYW1lIjoiTmlja05hbWVfU3VwZXJVc2VyMiJ9.ypNo406j43T7bNhMWsXqM43+ZmWryIJmRHg7p1BHvKMgo1y3HsCDKLoO5qwNwYWfRxdL1b6cjnrpPSwMDKE3yw==",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/api/order-server/order/getOrders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"order-server",
+								"order",
+								"getOrders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change status",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJBdXRoIFNlcnZlciIsImV4cCI6MTY4NTMyMjUwNzU4NCwibmJmIjoxNjg1MzIyMzg3NTg0LCJyb2xlIjoiQ0hFRiIsInVzZXJuYW1lIjoiTmlja05hbWVfU3VwZXJVc2VyMiJ9.ypNo406j43T7bNhMWsXqM43+ZmWryIJmRHg7p1BHvKMgo1y3HsCDKLoO5qwNwYWfRxdL1b6cjnrpPSwMDKE3yw==",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderId\": 1,\r\n    \"status\": \"PENDING\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/order-server/order/changeStatus",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"order-server",
+								"order",
+								"changeStatus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get order info",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJBdXRoIFNlcnZlciIsImV4cCI6MTY4NTMyMzU3Nzc5NCwibmJmIjoxNjg1MzIzNDU3Nzk1LCJyb2xlIjoiQ0hFRiIsInVzZXJuYW1lIjoiTmlja05hbWVfU3VwZXJVc2VyMiJ9.qZOXDLfUN+cg+hpXRmKAXT08B/RzU72BuOMVYTFIZjUaOjUQqmZfnYbbC7mUFXXAOAVOj5Utkk1QirMqf/di3g==",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/order-server/order/getOrderInfo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"order-server",
+								"order",
+								"getOrderInfo"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
