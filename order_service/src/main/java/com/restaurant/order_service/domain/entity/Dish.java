@@ -27,6 +27,6 @@ public class Dish {
     @Column(name = "quantity")
     private Integer quantity;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "dish")
+    @OneToMany
     private List<OrderDish> orderDishes;
 }
